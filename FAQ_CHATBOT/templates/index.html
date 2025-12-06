@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FAQ Chatbot</h1>
+
+    <form method="POST">
+      <input type="text" name="question"
+             placeholder="Ask your question..."
+             value="{{ question or '' }}" required />
+      <button type="submit">Ask</button>
+    </form>
+
+    {% if answer %}
+    <div class="chat">
+      <p><strong>You:</strong> {{ question }}</p>
+      <p><strong>Bot:</strong> {{ answer }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
